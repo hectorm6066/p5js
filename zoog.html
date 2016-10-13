@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+    
+    <script>
+        function setup() {
+            createCanvas(1000,1000)
+        }
+
+        function draw() {
+            stroke("black")
+            strokeWeight(1)
+            fill(51,255,51)
+            ellipse(300,260,150,300)
+            //the lines below are for the tophat and eyes
+            fill("black")
+            ellipse(265,240,25,80)
+            ellipse(335,240,25,80)
+            ellipse(300,370,30,30)
+            rect(240,30,120,120)
+            rect(180,150,230,10)
+            //this is the body and monocle,as well as the text and line
+            fill("gold")
+            rect(225,410,150,250)
+            noFill()
+            stroke("gold")
+            strokeWeight(5)
+            ellipse(335,240,30,95)
+            fill("gold")
+            rect(349,250,1,70)
+            line(50,20,170,20)
+            strokeWeight(1)
+            textSize(32)
+            text("Good day!",40,20)
+        }
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/hectorm6066/p5js/blob/gh-pages/FILENAME.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+</html>
