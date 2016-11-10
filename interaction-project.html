@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+    
+    <script>
+      
+        function setup() {
+            createCanvas(800,600);
+        }
+
+        function draw() {
+            
+            
+            
+        }
+        function mousePressed(){
+
+            fill("yellow")
+            ellipse(mouseX,mouseY,100,100)
+            // the code above is the face
+            fill("white")
+            ellipse(mouseX+25,mouseY,40,40)
+            fill("black")
+            ellipse(mouseX+25,mouseY,10,10)
+            fill("white")
+            ellipse(mouseX-25,mouseY,40,40)
+            fill("red")
+            ellipse(mouseX,mouseY+40,50,20)
+            // the code above is the mouth
+            fill("black")
+            ellipse(mouseX-25,mouseY,10,10)
+        }      
+        function keyPressed(){
+            fill("yellow")
+            ellipse(mouseX,mouseY,100,100)
+            fill("white")
+            ellipse(mouseX+25,mouseY,40,40)
+            fill("black")
+            ellipse(mouseX+25,mouseY,10,10)
+            fill("white")
+            ellipse(mouseX-25,mouseY,40,40)
+            fill("red")
+            ellipse(mouseX,mouseY+40,50,20)
+            fill("black")
+            ellipse(mouseX-25,mouseY,10,10)
+            // the code below this line is the top hat that the Smiley wears.
+            fill("black")
+            rect(mouseX-40,mouseY -110,80,80)
+            rect(mouseX-50,mouseY -40,100,20)
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
