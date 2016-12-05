@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+    
+    <script>
+        function setup() {
+            createCanvas(500,500);
+            // background(122)
+            diameter = 20
+            transparency = 255
+        }
+
+        function draw() {
+            
+            
+        }
+        function mouseDragged(){
+            noStroke()
+            ellipse(mouseX,mouseY,diameter,diameter)
+            }
+        
+        function keyTyped(){
+            //Colors for circle
+            if (key === 'r'){
+                fill(255,0,0,transparency)
+            }
+            if (key === 'b'){
+                fill(0,0,255,transparency)
+            }
+            if (key === 'y'){
+                fill(242,242,0,transparency)
+            }
+            if (key === 'g'){
+                fill(0,255,0,transparency)
+            }
+            if (key === 'o'){
+                fill(255,204,0,transparency)
+            }
+            if (key === 'p'){
+                fill(174,0,255,transparency)
+            }
+            // used to erase all
+            if (key === 'c'){
+                clear()
+            }
+            // changes the size
+            if (key === 'u'){
+                diameter += 5
+            }
+            if (key === 'i'){
+                diameter -= 5
+            }
+            //changes the transparency 
+            if (key === 'w'){
+                transparency += 10
+            }
+            if (key === 's'){
+                transparency -= 10
+            }
+        }
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
