@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>Pong</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.13/p5.js"></script>
+    <script>
+        var ballX;
+        var ballY;
+        var ballSpeedX = 5;
+        var ballSpeedY = 5;
+        var paddleHeight = 30;// variables for functions
+        var paddleWidth = 200
+        var number = 0
+
+        function setup() {
+            createCanvas(800, 600);
+            // noCursor();//disables the cursor on the screen
+            ballX = width / 2;
+            ballY = height / 2;// puts the ball in the center of the screen
+        }
+
+        function draw() {
+            background(128);// sets the background to gray
+            moveBall();
+            drawPaddle();
+            drawBall();// all of the code used to run pong
+            checkCollide()
+            score()
+        }
+
+        function moveBall() {
+            ballX = ballX + ballSpeedX;//moves the ball horizontally
+            ballY = ballY + ballSpeedY;//moves the ball vertically
+
+            console.log("ballSpeedX: " + ballSpeedX + 
+                               ", ballSpeedY: " + ballSpeedY);
+        }
+
+        function checkCollide() {
+            if (ballX < 0 || ballX > width) {// checks if ball is in air
+                ballSpeedX = ballSpeedX * -1;
+            }
+            if (ballY < 0) {
+                ballSpeedY = ballSpeedY * -1;
+            }
+            if (ballY > height - paddleHeight) {
+                if (ballX > mouseX && ballX < mouseX + paddleWidth) {
+                    ballSpeedY = ballSpeedY * -1.05;// checks to see if ball is past paddle
+                    paddleWidth = paddleWidth - 2
+                    number = number + 1
+                }
+                else {
+                    fill("black")
+                    text("GAME OVER!", width / 2, height / 2);//tells you when you have failed.
+                    noLoop();// ends the game until refreshed
+                }
+            }
+        }
+
+        function drawBall() {
+            noStroke();
+            ellipse(ballX, ballY, 20, 20);// sets the ball on the field
+            
+        }
+
+        function drawPaddle() {
+            fill("red")
+            strokeWeight(4);
+            rect(mouseX, height - paddleHeight - 4, paddleWidth, paddleHeight);// draws the paddle to bounce the ball back
+            
+        }
+        function score(){
+            fill("white")
+            textSize(40)
+            text(number,400,100)
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
